@@ -25,7 +25,7 @@ A web application that generates AI-powered images of animals wearing custom t-s
 
    ```bash
    git clone https://github.com/rejosari-space/Animal-T-Shirt-Generator.git
-   cd animal-tshirt-generator
+   cd Animal-T-Shirt-Generator
    npm install
    ```
 
