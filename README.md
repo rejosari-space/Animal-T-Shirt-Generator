@@ -97,6 +97,6 @@ Given additional development time, I would implement:
 
 This project is configured for one-click deployment on Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rejosari-space/Animal-T-Shirt-Generator.git)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rejosari-space/Animal-T-Shirt-Generator.git&env=REPLICATE_API_TOKEN)
 
 Remember to add your \`REPLICATE_API_TOKEN\` in the Vercel environment variables.
