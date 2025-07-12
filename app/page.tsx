@@ -88,7 +88,6 @@ export default function Home() {
 
       toast.success("Your image has been generated successfully.");
     } catch (error) {
-      toast.error("Error generating image:", error);
       toast.error(
         error instanceof Error
           ? error.message
@@ -112,7 +111,9 @@ export default function Home() {
       document.body.removeChild(link);
       window.URL.revokeObjectURL(downloadUrl);
     } catch (error) {
-      toast.error("Failed to download the image.");
+      toast.error(
+        error instanceof Error ? error.message : "Failed to download the image."
+      );
     }
   };
 

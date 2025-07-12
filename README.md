@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Animal T-Shirt Generator
 
-## Getting Started
+A web application that generates AI-powered images of animals wearing custom t-shirts using Replicate.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🎨 Generate images of animals wearing custom t-shirts
+- 🐾 Choose from 10 different animals (cat, dog, rabbit, bear, etc.)
+- 📝 Custom text input for t-shirt slogans
+- 📱 Responsive design for desktop and mobile
+- 📸 Download generated images
+- 🕒 History of recent generations
+- ⚡ Loading states and error handling
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Setup (< 2 minutes)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ installed
+- Replicate token
 
-## Learn More
+### Installation Steps
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone and install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/rejosari-space/Animal-T-Shirt-Generator.git
+   cd animal-tshirt-generator
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Set up environment variables:**
 
-## Deploy on Vercel
+   ```bash
+   export REPLICATE_API_TOKEN=<paste-your-token-here>
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run the development server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to \`http://localhost:3000\`
+
+## Prompt Strategy
+
+The application uses a carefully crafted prompt strategy to ensure high-quality, consistent results:
+
+**Core Prompt Structure:**
+\`"A high-quality, professional photograph of a cute {animal} wearing a clean white t-shirt. The t-shirt has the text "{phrase}" printed clearly and prominently on the front in bold, readable letters. The {animal} is sitting upright, facing the camera, with good lighting and a neutral background. The text on the shirt should be perfectly legible and well-centered. Photorealistic, studio lighting, high resolution."\`
+
+**Key Elements:**
+
+- **Specificity**: Detailed description ensures consistent animal positioning and t-shirt appearance
+- **Text Clarity**: Emphasizes "clearly and prominently" and "perfectly legible" to ensure readable text
+- **Professional Quality**: Uses terms like "professional photograph" and "studio lighting" for better image quality
+- **Negative Prompts**: Explicitly excludes blurry images, distorted text, and inappropriate content
+- **Technical Parameters**: Uses optimal settings (50 inference steps, 7.5 guidance scale) for quality vs. speed balance
+
+This approach results in consistent, high-quality images where the text is clearly readable and the animals are properly positioned.
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **AI Generation**: Replicate
+- **Language**: TypeScript
+- **Deployment**: Vercel-ready
+
+## Improvements for More Time
+
+Given additional development time, I would implement:
+
+1. **Advanced Features:**
+
+   - Multiple t-shirt colors and styles
+   - Different font options for text
+   - Batch generation capabilities
+   - User accounts and persistent history
+
+2. **UX Improvements:**
+
+   - Real-time preview of text on t-shirt mockup
+   - Drag-and-drop image uploads for custom backgrounds
+   - Social sharing capabilities
+   - Advanced filtering and search in history
+
+3. **Performance:**
+   - Image optimization and compression
+   - Lazy loading for history gallery
+   - Request queuing for high traffic
+   - Edge caching strategies
+
+## Deployment
+
+This project is configured for one-click deployment on Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rejosari-space/Animal-T-Shirt-Generator.git)
+
+Remember to add your \`REPLICATE_API_TOKEN\` in the Vercel environment variables.

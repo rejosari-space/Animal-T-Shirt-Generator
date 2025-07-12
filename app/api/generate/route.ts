@@ -34,7 +34,8 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const imageUrl = output.url();
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    const imageUrl = (output as any).url();
 
     if (!imageUrl) {
       return NextResponse.json(
